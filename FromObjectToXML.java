@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 
 /**
  * @author Volovich Alexey
- * Класс записывающий объекты класса HumanBeing в XML файл.
+ * @deprecated Класс записывающий объекты класса HumanBeing в XML файл.
  * @see HumanBeing
  */
 public class FromObjectToXML implements FileOut{

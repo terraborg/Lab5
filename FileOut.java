@@ -8,7 +8,7 @@ import java.io.IOException;
 
 /**
  * @author Volovich Alexey
- * Интерфейс задающий взаимодействие с классами записи данных в файл.
+ * @deprecated Интерфейс задающий взаимодействие с классами записи данных в файл.
  */
 public interface FileOut{
     /**

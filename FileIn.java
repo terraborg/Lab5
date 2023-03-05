@@ -7,7 +7,7 @@ import java.io.FileNotFoundException;
 
 /**
  * @author Volovich Alexey
- * Интерфейс задающий взаимодействие с классами считывания данных из файла
+ * @deprecated Интерфейс задающий взаимодействие с классами считывания данных из файла
  */
 public interface FileIn {
     /**
