@@ -9,7 +9,7 @@ import java.util.HashMap;
 
 /**
  * @author Volovich Alexey
- * Класс управляющий командами, связывает команды с базой данных и историей исполняемых команд
+ * @deprecated Класс управляющий командами, связывает команды с базой данных и историей исполняемых команд
  * @see DataBaseHolder
  * @see HistoryManager
  */

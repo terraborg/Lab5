@@ -1,5 +1,7 @@
 package core;
 
+import core.utils.generatorID;
+
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
 import java.time.LocalDate;
@@ -10,12 +12,10 @@ import static java.lang.Math.*;
 
 /**
  * @author Volovich Alexey
- * Класс описывающий хранимые элементы коллекции.
- * Полностью соответствует условию лабораторной.
+ * @deprecated Класс описывающий хранимые элементы коллекции. Полностью соответствует условию лабораторной.
  */
 
 public class HumanBeing implements Comparable<HumanBeing> {
-    private static long last_id = 1;
     private Long id;
     private String name;
     private Coordinates coordinates;
@@ -75,8 +75,7 @@ public class HumanBeing implements Comparable<HumanBeing> {
      * Функция заполняющая авто-генерируемые поля.
      */
     private void generateInfo() {
-        id = HumanBeing.last_id;
-        HumanBeing.last_id++;
+        id = generatorID.next();
         creationTime = java.time.LocalDateTime.now();
     }
 
@@ -200,8 +199,7 @@ public class HumanBeing implements Comparable<HumanBeing> {
     //TODO make validator
 
     /**
-     * Класс выполняющий чтение из файла отдельного объекта класса HumanBeing.
-     * Является внутренним в целях избежания нарушения инкапсуляции.
+     * @deprecated  Класс выполняющий чтение из файла отдельного объекта класса HumanBeing. Является внутренним в целях избежания нарушения инкапсуляции.
      * @see core.file.FromXMLToObject
      */
     private class InnerXMLReader
