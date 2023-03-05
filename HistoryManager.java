@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 /**
  * @author Volovich Alexey
- * Класс хранящий историю исполнения команд
+ * @deprecated Класс хранящий историю исполнения команд
  * @see Command
  */
 public class HistoryManager {
