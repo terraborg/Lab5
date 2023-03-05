@@ -9,7 +9,7 @@ import java.util.*;
 
 /**
  * @author Volovich Alexey
- * Класс управляющий коллекцией, реализует интерфейс DataBaseHolder
+ * @deprecated Класс управляющий коллекцией, реализует интерфейс DataBaseHolder
  * @see DataBaseHolder
  */
 public class TreeSetHolder implements DataBaseHolder<HumanBeing>{

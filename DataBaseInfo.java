@@ -4,7 +4,8 @@ import java.time.LocalDateTime;
 
 /**
  * @author Volovich Alexey
- *
+ * @deprecated Класс хранящий общую информацию о базе данных
+ * @see DataBaseHolder
  */
 public class DataBaseInfo {
     private final String type;
