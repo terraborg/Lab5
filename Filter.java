@@ -2,7 +2,7 @@ package core.database;
 
 /**
  * @author Volovich Alexey
- * Функциональный интерфейс для фильтрации элементов базы данных
+ * @deprecated Функциональный интерфейс для фильтрации элементов базы данных
  * @see DataBaseHolder
  */
 public interface Filter<E> {

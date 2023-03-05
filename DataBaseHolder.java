@@ -8,7 +8,7 @@ import java.util.function.Predicate;
 
 /**
  * @author Volovich Alexey
- * Интерфейс задающий поведение баз данных.
+ * @deprecated Интерфейс задающий поведение баз данных.
  * @see core.commands.Command
  * @see core.CommandManager
  */
