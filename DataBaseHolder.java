@@ -12,7 +12,7 @@ import java.util.function.Predicate;
  * @see core.commands.Command
  * @see core.CommandManager
  */
-public interface DataBaseHolder<E> {
+public interface DataBaseHolder<E extends Comparable<?>> {
     /**
      * @return Команда возвращает общую информацию о базе данных в виде объекта класса DataBaseInfo
      * @see DataBaseInfo
