@@ -5,7 +5,7 @@ package core.database;
  * @deprecated Функциональный интерфейс для фильтрации элементов базы данных
  * @see DataBaseHolder
  */
-public interface Filter<E> {
+public interface Filter<E  extends Comparable<?>> {
     /**
      * Команда проверяющая на соответствие элемента базы данных фильтру
      * @param e - элемент базы данных
