@@ -10,6 +10,9 @@ import core.commands.structure.ServerCommand;
 import javax.xml.stream.XMLStreamException;
 import java.io.IOException;
 
+/**
+ * Фабрика создающая экземпляры команды save
+ */
 public class SaveCommandFactory extends CommandFactory {
     public SaveCommandFactory(ClientContext client, ServerContext server) {
         super(client, server, "save", "сохранить коллекцию в XML файл");

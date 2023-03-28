@@ -11,6 +11,9 @@ import core.database.DataBaseHolder;
 import javax.xml.stream.XMLStreamException;
 import java.io.FileNotFoundException;
 
+/**
+ * Фабрика создающая экземпляры команды read
+ */
 public class ReadCommandFactory extends CommandFactory {
 
     public ReadCommandFactory(ClientContext client, ServerContext server) {

@@ -2,6 +2,9 @@ package core.io.managers;
 
 import java.util.Scanner;
 
+/**
+ * Менеджер ввода с консоли
+ */
 public class ConsoleManager extends IOManager{
     public ConsoleManager(Scanner in) {
         super(in);

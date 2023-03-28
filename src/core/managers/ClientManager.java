@@ -8,6 +8,9 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Класс связывающий воедино все модули клиентской части приложения
+ */
 public class ClientManager implements ClientContext {
 
     private final Map<String, CommandFactory> factoryPool;
@@ -86,9 +89,5 @@ public class ClientManager implements ClientContext {
             b.append(factoryPool.get(e).getName()).append(": ").append(factoryPool.get(e).getDescription()).append('\n');
         }
         return b.toString();
-    }
-
-    public ScriptExecuter getScriptExecuter() {
-        return scriptExecuter;
     }
 }

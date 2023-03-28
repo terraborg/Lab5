@@ -6,6 +6,9 @@ import core.io.readers.structure.Input;
 import core.io.readers.structure.Validator;
 import core.io.readers.structure.WrongInputException;
 
+/**
+ * Класс для ввода данных типа Weapon
+ */
 public class WeaponInput extends Input<HumanBeing.WeaponType> {
     public WeaponInput(IOManager io, boolean repeat, String invMessage) {
         super(io, repeat,true,invMessage);

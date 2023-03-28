@@ -7,6 +7,9 @@ import core.commands.structure.Command;
 import core.commands.structure.CommandFactory;
 import core.commands.structure.ServerCommand;
 
+/**
+ * Фабрика создающая экземпляры команды history
+ */
 public class HistoryCommandFactory extends CommandFactory {
     public HistoryCommandFactory(ClientContext client, ServerContext server) {
         super(client, server, "history", "вывести последние 14 команд (без их аргументов)");

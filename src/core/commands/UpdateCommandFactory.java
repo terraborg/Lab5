@@ -13,6 +13,9 @@ import core.io.readers.HumanBeingInput;
 import core.io.readers.IdInput;
 import core.io.readers.structure.WrongInputException;
 
+/**
+ * Фабрика создающая экземпляры команды update
+ */
 public class UpdateCommandFactory extends CommandFactory {
 
     public UpdateCommandFactory(ClientContext client, ServerContext server) {

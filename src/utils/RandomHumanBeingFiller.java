@@ -2,6 +2,9 @@ package utils;
 
 import core.HumanBeing;
 
+/**
+ * Класс для генерации случайных элементов коллекции
+ */
 public class RandomHumanBeingFiller {
     private static int name = 1;
     public static HumanBeing getRandomHuman()

@@ -5,6 +5,9 @@ import core.managers.ServerContext;
 import core.commands.structure.Command;
 import core.commands.structure.CommandFactory;
 
+/**
+ * Фабрика создающая экземпляры команды exit_with_save
+ */
 public class ExitWithSaveCommandFactory extends CommandFactory {
     public ExitWithSaveCommandFactory(ClientContext client, ServerContext server) {
         super(client, server, "exit_with_save", "завершает работу программы с сохранением данных");

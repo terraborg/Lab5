@@ -4,6 +4,9 @@ import core.managers.ClientContext;
 import core.managers.ServerContext;
 import core.io.managers.IOManager;
 
+/**
+ * Абстрактный класс фабрик команд.
+ */
 abstract public class CommandFactory {
     private final ClientContext client;
     private final ServerContext server;
@@ -26,6 +29,10 @@ abstract public class CommandFactory {
         return description;
     }
 
+    /**
+     * Предполагается что с вызовом этой функции фабрика считает с IOManager io все нужные данные аргументов
+     * @return Возвращает true если считывание успешно и false в обратном случае
+     */
     public boolean readArgs(IOManager io)
     {
         return true;

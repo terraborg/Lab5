@@ -9,6 +9,9 @@ import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.StringReader;
 
+/**
+ * Класс для ввода данных типа Boolean
+ */
 public class BooleanInput extends Input<Boolean> {
     public BooleanInput(IOManager io, boolean repeat,boolean nullable, String invMessage) {
         super(io, repeat, nullable, invMessage);

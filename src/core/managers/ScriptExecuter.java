@@ -9,6 +9,9 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.*;
 
+/**
+ * Класс отвечающий за обработку скриптов и предотвращения зацикливаний
+ */
 public class ScriptExecuter{
     private final Set<String> history;
     private final ClientContext client;

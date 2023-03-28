@@ -5,8 +5,7 @@ import core.managers.ServerManager;
 
 /**
  * @author Volovich Alexey
- * Интерфейс задающий поведение команд.
- * @see ServerManager
+ * Абстрактный класс задающий поведение команд.
  */
 public abstract class Command {
     private final String name;
@@ -34,6 +33,9 @@ public abstract class Command {
      */
     abstract public void execute();
 
+    /**
+     * Этот метод следует использовать для предварительных действий с командой, таких как, например, передача на сервер
+     */
     public void preExecute()
     {
         execute();

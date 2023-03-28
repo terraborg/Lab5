@@ -11,6 +11,9 @@ import core.io.managers.IOManager;
 import core.io.readers.HumanBeingInput;
 import core.io.readers.structure.WrongInputException;
 
+/**
+ * Фабрика создающая экземпляры команды add
+ */
 public class AddCommandFactory extends CommandFactory {
     public AddCommandFactory(ClientContext client, ServerContext server) {
         super(client, server, "add {element}", "добавить новый элемент в коллекцию");

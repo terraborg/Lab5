@@ -11,6 +11,9 @@ import core.io.readers.IdInput;
 import core.io.readers.structure.WrongInputException;
 import utils.RandomHumanBeingFiller;
 
+/**
+ * Фабрика создающая экземпляры команды rnd_fill
+ */
 public class RndFillCommandFactory extends CommandFactory {
     public RndFillCommandFactory(ClientContext client, ServerContext server) {
         super(client, server, "rnd_fill count", "заполняет коллекцию случайными элементами");

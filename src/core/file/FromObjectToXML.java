@@ -52,7 +52,10 @@ public class FromObjectToXML implements FileOut{
             writer.writeAttribute("realHero",e.getRealHero().toString());
             writer.writeAttribute("hasToothpick", e.getHasToothpick().toString());
             writer.writeAttribute("impactSpeed",String.valueOf(e.getImpactSpeed()));
-            writer.writeAttribute("weaponType",e.getWeaponType().name());
+            if(e.getWeaponType()!=null)
+                writer.writeAttribute("weaponType",e.getWeaponType().name());
+            else
+                writer.writeAttribute("weaponType","");
             writer.writeAttribute("mood",e.getMood().name());
 
             writer.writeStartElement("CreationTime");
@@ -67,8 +70,14 @@ public class FromObjectToXML implements FileOut{
             writer.writeEndElement();
 
             writer.writeStartElement("Car");
-            writer.writeAttribute("name",e.getCar().getName());
-            writer.writeAttribute("cool",e.getCar().getCool().toString());
+            if(e.getCar()!=null && e.getCar().getName()!=null)
+                writer.writeAttribute("name",e.getCar().getName());
+            else
+                writer.writeAttribute("name","");
+            if(e.getCar()!=null && e.getCar().getName()!=null)
+                writer.writeAttribute("cool",e.getCar().getCool().toString());
+            else
+                writer.writeAttribute("cool","");
             writer.writeEndElement();
 
             writer.writeEndElement();

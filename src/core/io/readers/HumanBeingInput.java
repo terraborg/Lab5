@@ -6,6 +6,9 @@ import core.io.readers.structure.Input;
 import core.io.readers.structure.Validator;
 import core.io.readers.structure.WrongInputException;
 
+/**
+ * Класс для ввода данных типа HumanBeing
+ */
 public class HumanBeingInput extends Input<HumanBeing> {
     public HumanBeingInput(IOManager io) {
         super(io, false,false, "HumanBeing{\n");

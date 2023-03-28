@@ -5,6 +5,9 @@ import core.io.readers.structure.Input;
 import core.io.readers.structure.Validator;
 import core.io.readers.structure.WrongInputException;
 
+/**
+ * Класс для ввода имен
+ */
 public class NameInput extends Input<String> {
     public NameInput(IOManager io, boolean repeat, boolean nullable) {
         super(io, repeat,nullable, "name = ");

@@ -11,6 +11,9 @@ import core.io.managers.IOManager;
 import core.io.readers.WeaponInput;
 import core.io.readers.structure.WrongInputException;
 
+/**
+ * Фабрика создающая экземпляры команды count_by_weapon_type
+ */
 public class CountByWeaponTypeCommandFactory extends CommandFactory {
     public CountByWeaponTypeCommandFactory(ClientContext client, ServerContext server) {
         super(client, server, "count_by_weapon_type weaponType","вывести количество элементов, значение поля weaponType которых равно заданному");

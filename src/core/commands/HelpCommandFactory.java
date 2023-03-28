@@ -6,6 +6,9 @@ import core.commands.structure.CallbackUnit;
 import core.commands.structure.Command;
 import core.commands.structure.CommandFactory;
 
+/**
+ * Фабрика создающая экземпляры команды help
+ */
 public class HelpCommandFactory extends CommandFactory {
     public HelpCommandFactory(ClientContext client, ServerContext server) {
         super(client, server, "help", "вывести справку по доступным командам");

@@ -6,6 +6,9 @@ import core.io.readers.structure.Input;
 import core.io.readers.structure.Validator;
 import core.io.readers.structure.WrongInputException;
 
+/**
+ * Класс для ввода данных типа Car
+ */
 public class CarInput extends Input<HumanBeing.Car> {
     public CarInput(IOManager io) {
         super(io, false, true, "Car{\n");

@@ -9,6 +9,9 @@ import core.commands.structure.ServerCommand;
 
 import java.util.Arrays;
 
+/**
+ * Фабрика создающая экземпляры команды print_ascending
+ */
 public class PrintAscCommandFactory extends CommandFactory {
     public PrintAscCommandFactory(ClientContext client, ServerContext server) {
         super(client, server, "print_ascending", "вывести элементы коллекции в порядке возрастания");

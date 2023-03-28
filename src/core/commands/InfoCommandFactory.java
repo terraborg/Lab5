@@ -7,6 +7,9 @@ import core.commands.structure.Command;
 import core.commands.structure.CommandFactory;
 import core.commands.structure.ServerCommand;
 
+/**
+ * Фабрика создающая экземпляры команды info
+ */
 public class InfoCommandFactory extends CommandFactory {
     public InfoCommandFactory(ClientContext client, ServerContext server) {
         super(client, server,"info" , "вывести в стандартный поток вывода информацию о коллекции (тип, дата инициализации, количество элементов и т.д.)");

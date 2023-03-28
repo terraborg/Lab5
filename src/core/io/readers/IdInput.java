@@ -5,6 +5,9 @@ import core.io.readers.structure.Input;
 import core.io.readers.structure.Validator;
 import core.io.readers.structure.WrongInputException;
 
+/**
+ * Класс для ввода id
+ */
 public class IdInput extends Input<Long> {
     public IdInput(IOManager io) {
         super(io,false,false,"");

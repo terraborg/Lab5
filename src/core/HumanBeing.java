@@ -254,7 +254,7 @@ public class HumanBeing implements Comparable<HumanBeing> {
                 "    impactSpeed = " + impactSpeed + '\n' +
                 "    weaponType = " + weaponType + '\n' +
                 "    mood = " + mood + '\n' +
-                "    car = " + car.toString() + '\n' +
+                "    car = " + car + '\n' +
                 '}' + '\n';
     }
 
@@ -270,7 +270,11 @@ public class HumanBeing implements Comparable<HumanBeing> {
             realHero = Boolean.valueOf(reader.getAttributeValue(2));
             hasToothpick = Boolean.valueOf(reader.getAttributeValue(3));
             impactSpeed = Float.parseFloat(reader.getAttributeValue(4));
-            weaponType = WeaponType.valueOf(reader.getAttributeValue(5));
+            var s = reader.getAttributeValue(5);
+            if(s.trim().length()==0)
+                weaponType = null;
+            else
+                weaponType = WeaponType.valueOf(s);
             mood = Mood.valueOf(reader.getAttributeValue(6));
             reader.next();
             creationTime = LocalDateTime.of(LocalDate.parse(reader.getAttributeValue(0)), LocalTime.parse(reader.getAttributeValue(1)));
@@ -279,7 +283,16 @@ public class HumanBeing implements Comparable<HumanBeing> {
             coordinates = new Coordinates(Float.parseFloat(reader.getAttributeValue(0)), Double.parseDouble(reader.getAttributeValue(1)));
             reader.next();
             reader.next();
-            car = new Car(reader.getAttributeValue(0),Boolean.valueOf(reader.getAttributeValue(1)));
+            var name = reader.getAttributeValue(0).trim();
+            var cool = reader.getAttributeValue(1).trim();
+            if(name.length()==0 && cool.length()==0)
+                car = null;
+            else if(name.length()==0)
+                car = new Car(null,Boolean.valueOf(cool));
+            else if(cool.length()==0)
+                car = new Car(name,null);
+            else
+                car = new Car(name,Boolean.valueOf(cool));
         }
     }
 

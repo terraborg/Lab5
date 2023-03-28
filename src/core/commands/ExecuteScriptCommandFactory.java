@@ -8,6 +8,9 @@ import core.io.managers.IOManager;
 import core.io.readers.NameInput;
 import core.io.readers.structure.WrongInputException;
 
+/**
+ * Фабрика создающая экземпляры команды execute_script
+ */
 public class ExecuteScriptCommandFactory extends CommandFactory {
     public ExecuteScriptCommandFactory(ClientContext client, ServerContext server) {
         super(client, server, "execute_script file_name", "считывает и исполняет скрипт из указанного файла");

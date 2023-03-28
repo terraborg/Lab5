@@ -11,6 +11,9 @@ import core.io.managers.IOManager;
 import core.io.readers.HumanBeingInput;
 import core.io.readers.structure.WrongInputException;
 
+/**
+ * Фабрика создающая экземпляры команды add_if_max
+ */
 public class AddIfMaxCommandFactory extends CommandFactory {
     public AddIfMaxCommandFactory(ClientContext client, ServerContext server) {
         super(client, server, "add_if_max {element}", "добавить новый элемент в коллекцию, если его значение превышает значение наибольшего элемента этой коллекции");

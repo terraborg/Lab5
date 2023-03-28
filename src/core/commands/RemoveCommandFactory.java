@@ -10,6 +10,9 @@ import core.io.managers.IOManager;
 import core.io.readers.IdInput;
 import core.io.readers.structure.WrongInputException;
 
+/**
+ * Фабрика создающая экземпляры команды remove_by_id
+ */
 public class RemoveCommandFactory extends CommandFactory {
     public RemoveCommandFactory(ClientContext client, ServerContext server) {
         super(client, server,"remove_by_id id","удалить элемент из коллекции по его id");

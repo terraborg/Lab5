@@ -6,6 +6,9 @@ import core.io.readers.structure.Input;
 import core.io.readers.structure.Validator;
 import core.io.readers.structure.WrongInputException;
 
+/**
+ * Класс для ввода данных типа Mood
+ */
 public class MoodInput extends Input<HumanBeing.Mood> {
     public MoodInput(IOManager io, boolean repeat, String invMessage) {
         super(io, repeat,false, invMessage);

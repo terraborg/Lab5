@@ -1,5 +1,9 @@
 package core.commands.structure;
 
+/**
+ * Класс в котором хранится обратная связь передаваемоя от команды клиенту
+ */
+
 public class CallbackUnit {
     private final boolean hasMessage;
     private final boolean isSuccess;

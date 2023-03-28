@@ -6,6 +6,9 @@ import core.io.readers.structure.Input;
 import core.io.readers.structure.Validator;
 import core.io.readers.structure.WrongInputException;
 
+/**
+ * Класс для ввода данных типа Coordinates
+ */
 public class CoordinatesInput extends Input<HumanBeing.Coordinates> {
     public CoordinatesInput(IOManager io) {
         super(io, false,false, "Coordinates{\n");

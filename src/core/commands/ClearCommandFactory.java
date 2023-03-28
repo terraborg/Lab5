@@ -8,6 +8,9 @@ import core.commands.structure.CommandFactory;
 import core.commands.structure.ServerCommand;
 import core.utils.GeneratorID;
 
+/**
+ * Фабрика создающая экземпляры команды clear
+ */
 public class ClearCommandFactory extends CommandFactory {
     public ClearCommandFactory(ClientContext client, ServerContext server) {
         super(client, server, "clear", "очистить коллекцию");

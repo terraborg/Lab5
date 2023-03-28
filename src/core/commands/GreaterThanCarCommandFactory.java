@@ -11,6 +11,9 @@ import core.io.managers.IOManager;
 import core.io.readers.CarInput;
 import core.io.readers.structure.WrongInputException;
 
+/**
+ * Фабрика создающая экземпляры команды filter_greater_than_car
+ */
 public class GreaterThanCarCommandFactory extends CommandFactory {
     public GreaterThanCarCommandFactory(ClientContext client, ServerContext server) {
         super(client, server, "filter_greater_than_car", "вывести элементы, значение поля car которых больше заданного");

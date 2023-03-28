@@ -5,6 +5,9 @@ import core.io.readers.structure.Input;
 import core.io.readers.structure.Validator;
 import core.io.readers.structure.WrongInputException;
 
+/**
+ * Класс для ввода данных типа Double
+ */
 public class DoubleInput extends Input<Double> {
     public DoubleInput(IOManager io, boolean repeat, String invMessage) {
         super(io, repeat,false, invMessage);

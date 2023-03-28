@@ -9,6 +9,9 @@ import core.commands.structure.ServerCommand;
 
 import java.util.Arrays;
 
+/**
+ * Фабрика создающая экземпляры команды show
+ */
 public class ShowCommandFactory extends CommandFactory {
     public ShowCommandFactory(ClientContext client, ServerContext server) {
         super(client, server, "show", "вывести в стандартный поток вывода все элементы коллекции в строковом представлении");

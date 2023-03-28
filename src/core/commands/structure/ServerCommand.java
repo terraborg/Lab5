@@ -3,6 +3,9 @@ package core.commands.structure;
 import core.managers.ClientContext;
 import core.managers.ServerContext;
 
+/**
+ * Абстрактный класс для команд, которые необходимо передать на сервер.
+ */
 abstract public class ServerCommand extends Command {
     private final ServerContext server;
 
@@ -11,6 +14,9 @@ abstract public class ServerCommand extends Command {
         this.server = server;
     }
 
+    /**
+     * В данной функции в дальнейшем предполагается сделать передачу данных на сервер
+     */
     @Override
     public void preExecute() {
         getServer().executeCommand(this);
