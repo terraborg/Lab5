@@ -1,0 +1,79 @@
+package core.file;
+
+import core.HumanBeing;
+import core.database.DataBaseHolder;
+
+import javax.xml.stream.XMLOutputFactory;
+import javax.xml.stream.XMLStreamException;
+import javax.xml.stream.XMLStreamWriter;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.time.LocalDateTime;
+
+/**
+ * @author Volovich Alexey
+ * Класс записывающий объекты класса HumanBeing в XML файл.
+ * @see HumanBeing
+ */
+public class FromObjectToXML implements FileOut{
+    /**
+     * Поле хранящее путь к записываемому файлу.
+     */
+    private final String path;
+
+    /**
+     * Конструктор, в который передается путь к считываемому файлу.
+     * @param path
+     */
+    public FromObjectToXML(String path) {
+        this.path = path;
+    }
+
+    /**
+     * Основная команда класса, производящая запись коллекции в XML файл.
+     * В параметрах передается ссылка на коллекцию из которой будут считаны данные.
+     * @param collection
+     * @throws IOException
+     * @throws XMLStreamException
+     */
+    @Override
+    public void writeCollection(DataBaseHolder collection) throws IOException, XMLStreamException {
+        XMLOutputFactory output = XMLOutputFactory.newInstance();
+        XMLStreamWriter writer = output.createXMLStreamWriter(new OutputStreamWriter(new FileOutputStream(path)));
+        writer.writeStartDocument("1.0");
+        writer.writeStartElement(collection.getInfo().getType());
+        for(HumanBeing e : collection.getAllElements())
+        {
+            writer.writeStartElement("HumanBeing");
+
+            writer.writeAttribute("id",String.valueOf(e.getId()));
+            writer.writeAttribute("name",e.getName());
+            writer.writeAttribute("realHero",e.getRealHero().toString());
+            writer.writeAttribute("hasToothpick", e.getHasToothpick().toString());
+            writer.writeAttribute("impactSpeed",String.valueOf(e.getImpactSpeed()));
+            writer.writeAttribute("weaponType",e.getWeaponType().name());
+            writer.writeAttribute("mood",e.getMood().name());
+
+            writer.writeStartElement("CreationTime");
+            LocalDateTime time = e.getCreationTime();
+            writer.writeAttribute("date",time.toLocalDate().toString());
+            writer.writeAttribute("time",time.toLocalTime().withNano(0).toString());
+            writer.writeEndElement();
+
+            writer.writeStartElement("Coordinates");
+            writer.writeAttribute("x",String.valueOf(e.getCoordinates().getX()));
+            writer.writeAttribute("y",String.valueOf(e.getCoordinates().getY()));
+            writer.writeEndElement();
+
+            writer.writeStartElement("Car");
+            writer.writeAttribute("name",e.getCar().getName());
+            writer.writeAttribute("cool",e.getCar().getCool().toString());
+            writer.writeEndElement();
+
+            writer.writeEndElement();
+        }
+        writer.writeEndDocument();
+        writer.flush();
+    }
+}
