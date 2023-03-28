@@ -12,10 +12,9 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        var c = new ClientManager(new ServerManager(new TreeSetHolder(new FromXMLToObject(System.getenv("LAB5")),
-                                                                      new FromObjectToXML(System.getenv("LAB5")))));
+        var c = new ClientManager(new ServerManager(new TreeSetHolder(new FromXMLToObject(System.getenv("lab5")),
+                                                                      new FromObjectToXML(System.getenv("lab5")))));
         var in = new ConsoleManager(new Scanner(System.in));
-        //c.execute("help",null);
         c.execute("read",null);
         while(true)
         {

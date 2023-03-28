@@ -6,6 +6,7 @@ import core.database.DataBaseHolder;
 import javax.xml.stream.XMLOutputFactory;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamWriter;
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
@@ -40,7 +41,10 @@ public class FromObjectToXML implements FileOut{
     @Override
     public void writeCollection(DataBaseHolder collection) throws IOException, XMLStreamException {
         XMLOutputFactory output = XMLOutputFactory.newInstance();
-        XMLStreamWriter writer = output.createXMLStreamWriter(new OutputStreamWriter(new FileOutputStream(path)));
+        var file = new File(path);
+        if(!file.exists())
+            file.createNewFile();
+        XMLStreamWriter writer = output.createXMLStreamWriter(new OutputStreamWriter(new FileOutputStream(file)));
         writer.writeStartDocument("1.0");
         writer.writeStartElement(collection.getInfo().getType());
         for(HumanBeing e : collection.getAllElements())

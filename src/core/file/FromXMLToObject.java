@@ -35,19 +35,25 @@ public class FromXMLToObject implements FileIn{
      */
     @Override
     public HumanBeing[] readFile() throws FileNotFoundException, XMLStreamException {
-        XMLStreamReader reader = XMLInputFactory.newInstance().createXMLStreamReader(path, new BufferedReader(new FileReader(path)));
-        ArrayList<HumanBeing> res = new ArrayList<>();
-        long mx = 0;
-        while (reader.hasNext())
-        {
-            reader.next();
-            if(reader.isStartElement() && reader.hasName() && reader.getLocalName().equals("HumanBeing")) {
-                res.add(new HumanBeing(reader));
-                mx = Math.max(res.get(res.size()-1).getId(),mx);
+        try{
+            XMLStreamReader reader = XMLInputFactory.newInstance().createXMLStreamReader(path, new BufferedReader(new FileReader(path)));
+            ArrayList<HumanBeing> res = new ArrayList<>();
+            long mx = 0;
+            while (reader.hasNext())
+            {
+                reader.next();
+                if(reader.isStartElement() && reader.hasName() && reader.getLocalName().equals("HumanBeing")) {
+                    res.add(new HumanBeing(reader));
+                    mx = Math.max(res.get(res.size()-1).getId(),mx);
+                }
             }
+            GeneratorID.setId(mx+1);
+            reader.close();
+            return res.toArray(new HumanBeing[0]);
+        }catch (NullPointerException e)
+        {
+            throw new FileNotFoundException();
         }
-        GeneratorID.setId(mx+1);
-        reader.close();
-        return res.toArray(new HumanBeing[0]);
+
     }
 }
