@@ -3,6 +3,7 @@ package core.managers;
 import core.commands.*;
 import core.commands.structure.*;
 import core.io.managers.IOManager;
+import core.managers.structure.ClientContext;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -16,6 +17,7 @@ public class ClientManager implements ClientContext {
     private final Map<String, CommandFactory> factoryPool;
     private final ServerManager serverManager;
 
+    private final HistoryManager historyManager;
     private final ScriptExecuter scriptExecuter;
     private void fillCommandFactoryPool()
     {
@@ -47,14 +49,18 @@ public class ClientManager implements ClientContext {
         scriptExecuter = new ScriptExecuter(this);
         factoryPool = new HashMap<>();
         fillCommandFactoryPool();
+        historyManager = new HistoryManager();
     }
 
     public void execute(String command, IOManager io)
     {
         if(factoryPool.containsKey(command)) {
             var factory = factoryPool.get(command);
-            if(factory.readArgs(io))
-                factory.newInstance().preExecute();
+            if(factory.readArgs(io)) {
+                Command com = factory.newInstance();
+                com.preExecute();
+                historyManager.addCommand(com);
+            }
         } else
             System.out.println("Такой команды не существует");
     }
@@ -66,8 +72,9 @@ public class ClientManager implements ClientContext {
 
     @Override
     public void putCallback(CallbackUnit callbackUnit) {
-        if(callbackUnit.isSuccess())
+        if(callbackUnit.isSuccess()) {
             System.out.println("Команда выполнена успешно!");
+        }
         if(callbackUnit.hasMessage())
             System.out.println(callbackUnit.getMessage());
     }
@@ -87,6 +94,26 @@ public class ClientManager implements ClientContext {
         Arrays.sort(arr);
         for(var e : arr) {
             b.append(factoryPool.get(e).getName()).append(": ").append(factoryPool.get(e).getDescription()).append('\n');
+        }
+        return b.toString();
+    }
+
+    @Override
+    public String getHistory() {
+        var b = new StringBuilder();
+        for(var e : historyManager.getHistory())
+        {
+            b.append(e.getName()).append("\n");
+        }
+        return b.toString();
+    }
+
+    @Override
+    public String getHistoryWithArgs() {
+        var b = new StringBuilder();
+        for(var e : historyManager.getHistory())
+        {
+            b.append(e.toString()).append("\n");
         }
         return b.toString();
     }

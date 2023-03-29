@@ -1,7 +1,6 @@
 package core.commands.structure;
 
-import core.managers.ClientContext;
-import core.managers.ServerManager;
+import core.managers.structure.ClientContext;
 
 /**
  * @author Volovich Alexey
@@ -41,6 +40,9 @@ public abstract class Command {
         execute();
     }
 
+    /**
+     * Переопределяя данный метод можно добавить к команде аргументы нужного типа
+     */
     public void addArgument(Object value) {
 
     }
@@ -52,6 +54,6 @@ public abstract class Command {
     @Override
     public String toString()
     {
-        return getName();
+        return getName().trim().split(" ")[0];
     }
 }

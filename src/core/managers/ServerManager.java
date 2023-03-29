@@ -2,6 +2,7 @@ package core.managers;
 
 import core.commands.structure.Command;
 import core.database.DataBaseHolder;
+import core.managers.structure.ServerContext;
 
 /**
  * @author Volovich Alexey
@@ -22,24 +23,7 @@ public class ServerManager implements ServerContext {
      * Возвращает массив имён последних 14 выполненных команд
      * @return String[]
      */
-    public String getHistory() {
-        var b = new StringBuilder();
-        for(var e : history.getHistory())
-        {
-            b.append(e.getName()).append("\n");
-        }
-        return b.toString();
-    }
 
-    @Override
-    public String getHistoryWithArgs() {
-        var b = new StringBuilder();
-        for(var e : history.getHistory())
-        {
-            b.append(e.toString()).append("\n");
-        }
-        return b.toString();
-    }
 
     /**
      * Выполняет команду command

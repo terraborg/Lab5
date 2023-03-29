@@ -1,7 +1,7 @@
 package core.commands;
 
-import core.managers.ClientContext;
-import core.managers.ServerContext;
+import core.managers.structure.ClientContext;
+import core.managers.structure.ServerContext;
 import core.commands.structure.CallbackUnit;
 import core.commands.structure.Command;
 import core.commands.structure.CommandFactory;
@@ -47,7 +47,7 @@ public class RemoveCommandFactory extends CommandFactory {
             }
             @Override
             public String toString() {
-                return  super.toString() + " " + id;
+                return super.toString() + " " + id;
             }
         };
         res.addArgument(id);

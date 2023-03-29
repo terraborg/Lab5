@@ -1,8 +1,8 @@
 package core.commands;
 
-import core.managers.ClientContext;
+import core.managers.structure.ClientContext;
 import core.HumanBeing;
-import core.managers.ServerContext;
+import core.managers.structure.ServerContext;
 import core.commands.structure.CallbackUnit;
 import core.commands.structure.Command;
 import core.commands.structure.CommandFactory;

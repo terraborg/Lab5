@@ -1,8 +1,8 @@
 package core.commands;
 
-import core.managers.ClientContext;
+import core.managers.structure.ClientContext;
 import core.HumanBeing;
-import core.managers.ServerContext;
+import core.managers.structure.ServerContext;
 import core.commands.structure.CallbackUnit;
 import core.commands.structure.Command;
 import core.commands.structure.CommandFactory;
@@ -16,7 +16,7 @@ import core.io.readers.structure.WrongInputException;
  */
 public class GreaterThanCarCommandFactory extends CommandFactory {
     public GreaterThanCarCommandFactory(ClientContext client, ServerContext server) {
-        super(client, server, "filter_greater_than_car", "вывести элементы, значение поля car которых больше заданного");
+        super(client, server, "filter_greater_than_car car", "вывести элементы, значение поля car которых больше заданного");
     }
 
     HumanBeing.Car argument;

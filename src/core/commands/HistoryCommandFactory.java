@@ -1,7 +1,7 @@
 package core.commands;
 
-import core.managers.ClientContext;
-import core.managers.ServerContext;
+import core.managers.structure.ClientContext;
+import core.managers.structure.ServerContext;
 import core.commands.structure.CallbackUnit;
 import core.commands.structure.Command;
 import core.commands.structure.CommandFactory;
@@ -20,7 +20,7 @@ public class HistoryCommandFactory extends CommandFactory {
         return new ServerCommand(getName(),getClient(),getServer()) {
             @Override
             public void execute() {
-                getClient().putCallback(new CallbackUnit(true,"История выполненных команд:\n" + getServer().getHistory()));
+                getClient().putCallback(new CallbackUnit(true,"История выполненных команд:\n" + getClient().getHistory()));
             }
         };
     }

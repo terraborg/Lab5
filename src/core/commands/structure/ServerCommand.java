@@ -1,7 +1,7 @@
 package core.commands.structure;
 
-import core.managers.ClientContext;
-import core.managers.ServerContext;
+import core.managers.structure.ClientContext;
+import core.managers.structure.ServerContext;
 
 /**
  * Абстрактный класс для команд, которые необходимо передать на сервер.
